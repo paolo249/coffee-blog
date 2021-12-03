@@ -2,7 +2,7 @@ const Item = require('../../models/item');
 
 module.exports = {
   create,
-  index,
+  getAll,
   show
 };
 
@@ -12,11 +12,12 @@ async function create(req,res) {
   res.json(item);
 }
 
-async function index(req, res) {
-  const items = await Item.find({}).sort('name').exec();
+async function getAll(req, res) {
+  const items = await Item.find({}).exec();
   // re-sort based upon the sortOrder of the categories
-  // items.sort((a, b) => a.name.sortOrder - b.name.sortOrder);
+  console.log(items);
   res.json(items);
+
 }
 
 async function show(req, res) {

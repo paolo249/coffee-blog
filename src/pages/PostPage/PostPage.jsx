@@ -16,19 +16,14 @@ import PostCard from "../../components/PostCard/PostCard";
 // 
 
 export default function PostPage({posts}) {
-const uniquePost = posts.map((p, i) => <PostCard post={p} key={i}/> ) 
+const uniquePost = posts.map((p, i) =>   <PostCard post={p} key={i}/> ) 
 
   return (
     <div className="PostPage">
       <h1>PostPage</h1>
         <section>
-        {/* <Link to="/posts/1">Post #1</Link>
-        <Link to="/posts/2">Post #2</Link>
-        <Link to="/posts/3">Post #3</Link>
-        <Link to="/posts/4">Post #4</Link> */}
-        {/* <BlogListDetails post={post}/> */}
-       {/* < NewBlogPost addPost={addPost}/> */}
-       {uniquePost} 
+       {uniquePost}
+    
       </section>
     </div>
   );
