@@ -11,13 +11,13 @@ export default function NavBar(props) {
 
   return (
     <nav>
-      <Link to="/">Home</Link>
+      <Link to="/">Post Page</Link>
       &nbsp; | &nbsp;
       <Link to="/about">About</Link>
       &nbsp; | &nbsp;
       <Link to="/contact">Contact</Link>
       &nbsp; | &nbsp;
-      <Link to="/new">New Blog Post</Link>
+      <Link to="/new">New Post</Link>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
       &nbsp; | &nbsp;

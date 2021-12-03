@@ -1,0 +1,16 @@
+  
+  .PostPage section  {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .PostPage section a{
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+  }
+  
