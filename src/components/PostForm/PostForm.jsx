@@ -16,7 +16,8 @@ export default function PostForm({addPost}) {
         addPost(formData);
         setFormData({ name: "", desc: ""});
     }
-
+    
+   
 
 
     return(

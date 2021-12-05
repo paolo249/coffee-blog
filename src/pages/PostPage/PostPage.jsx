@@ -16,7 +16,7 @@ import PostCard from "../../components/PostCard/PostCard";
 // 
 
 export default function PostPage({posts}) {
-const uniquePost = posts.map((p, i) =>   <PostCard post={p} key={i}/> ) 
+const uniquePost = posts.map((p, i) =>   <PostCard post={p} key={i} /> ) 
 
   return (
     <div className="PostPage">

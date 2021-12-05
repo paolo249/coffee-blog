@@ -5,13 +5,18 @@ export function create(item) {
   return sendRequest(`${BASE_URL}/items`, 'POST', item);
 }
 
+export function deletePost(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
+
+
 export function getAll() {
   return sendRequest(BASE_URL);
 }
 
-export function getById(id) {
-  return sendRequest(`${BASE_URL}/${id}`);
-}
+// export function getById(id) {
+//   return sendRequest(`${BASE_URL}/${id}`);
+// }
 
 async function sendRequest(url, method = 'GET', payload = null) {
   // Fetch accepts an options object as the 2nd argument

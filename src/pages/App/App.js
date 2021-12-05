@@ -24,15 +24,21 @@ export default function App() {
     setPosts([...posts, newItem]);
   }
   
+  
   useEffect( function() {
     async function getAllPosts() {
       const items = await itemsAPI.getAll();
+      console.log("hello:", items);
       setPosts(items);
     }
     getAllPosts();
-  }, [])
+  },[posts]);
 
-
+  async function deletePost(post) {
+    const deleteItem = await itemsAPI.deletePost(post);
+    const updatedPosts = posts.filter(post => post._id !== deleteItem._id)
+    setPosts(updatedPosts);
+  }
 
   // .filter() method to filter the post you clicked on to delete (maybe evt.target.name === e)
   // front end part: button for DELETE (send id#)
@@ -55,11 +61,11 @@ export default function App() {
           <Routes>
             {/* client-side route that renders the component instance if the path matches the url in the address bar */}
             <Route path="/" element={<PostPage user={user} setUser={setUser} posts={posts}/>}/>
-            <Route path="/items/:id" element={<PostDetailPage uniquePost={uniquePost}/>}/>
+            <Route path="/items/:id" element={<PostDetailPage uniquePost={uniquePost} deletePost={deletePost}  setPosts={setPosts}/>}/>
             <Route path="/posts/:postId" element={<BlogListDetails  />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/new" element={<NewBlogPost addPost={addPost} />} />
+            <Route path="/new" element={<NewBlogPost addPost={addPost}/>} />
             {/* Redirected to PostPage just in case visitor enters an ambiguous route path */}
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
