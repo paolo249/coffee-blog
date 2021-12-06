@@ -21,8 +21,8 @@ async function deletePost(req,res) {
 
 
 async function updatePost(req,res) {
-  const updatedItem = await Item.findByIdAndUpdate(req.body.id, req.body, {new:true});
-  console.log(updatedItem);
+  const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body);
+  // console.log("updatedItembyController", updatedItem);
   res.json(updatedItem);
 }
 

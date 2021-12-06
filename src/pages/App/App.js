@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import './App.css';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
@@ -17,6 +17,7 @@ import * as itemsAPI from '../../utilities/items-api';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [posts, setPosts] = useState([]);
+  const navigate = useNavigate(); 
   const uniquePost = posts.map((p, i) => p )
   // console.log("Unique", posts);
 
@@ -35,41 +36,27 @@ export default function App() {
     getAllPosts();
   },[]);
 
-
   async function deletePost(id) {
     console.log("deletePost",id);
     const deleteItem = await itemsAPI.deletePost(id);
-    const updatedPosts = posts.filter(post => post._id !== deleteItem._id)
+    const updatedPosts = posts.filter(post => post._id !== deleteItem._id);
     setPosts(updatedPosts);
-  }
-
-  
-  
+    navigate('/');
+  }  
 
   //update the array 
   async function updatePost(post) {
-    console.log(post._id);
+    console.log("postMalone", post);
+    
     const updateItem = await itemsAPI.updatedPost(post);
-    console.log("Hello",updateItem);
+    console.log("updateItem", updateItem);
     const updatedPosts = posts.map((p) => p._id === updateItem._id ? updateItem : p);
-    console.log("update", updateItem);
+    console.log("update", updatedPosts);
     setPosts(updatedPosts);
+    navigate('/');
   }
 
 
-  // .filter() methconod to filter the post you clicked on to delete (maybe evt.target.name === e)
-  // front end part: button for DELETE (send id#)
-  //back end part: another async function for DELETE, go 
-  // async function deletePost(post) {
-  //   await itemsAPI.delete(post);
-  //   setPosts([...posts, Item]);
-  //   const newItem = await itemsAPI.create(post);
-    // const updatedPosts = [...posts, newItem];
-      // setPosts(updatedPosts);
-  // }
-
-  
- 
   return (
     <main className="App">
       { user ?
@@ -83,7 +70,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/new" element={<NewBlogPost addPost={addPost}/>} />
-            <Route path="/edit/" element={<UpdatePostForm updatePost={updatePost} posts={posts} setPosts={setPosts} />} />
+            {/* <Route path="/edit/" element={<UpdatePostForm updatePost={updatePost} posts={posts} setPosts={setPosts} />} /> */}
             {/* Redirected to PostPage just in case visitor enters an ambiguous route path */}
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
