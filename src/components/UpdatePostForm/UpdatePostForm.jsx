@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from "react";
+import {useNavigate} from 'react-router-dom';
 
 
 // We have to send the (post) state through here in UpdatePostForm
@@ -7,6 +8,7 @@ import {useState} from "react";
 
 export default function UpdatePostForm({posts, updatePost, post}) {
     const[formData, setFormData] = useState(post);
+    const navigate = useNavigate(); 
    console.log("postm",posts);
     //  console.log("formData", formData);
     function handleChange(evt){
@@ -21,6 +23,7 @@ export default function UpdatePostForm({posts, updatePost, post}) {
         console.log("formData", formData);
        updatePost(formData);
         setFormData({ name: "", desc: ""});
+        // navigate('/');
     }
     
   

@@ -19,7 +19,7 @@ export default function App() {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate(); 
   const uniquePost = posts.map((p, i) => p )
-  // console.log("Unique", posts);
+  
 
   async function addPost(post) {
     const newItem = await itemsAPI.create(post);
@@ -30,7 +30,6 @@ export default function App() {
   useEffect( function() {
     async function getAllPosts() {
       const items = await itemsAPI.getAll();
-      // console.log("hello:", items);
       setPosts(items);
     }
     getAllPosts();
@@ -46,11 +45,10 @@ export default function App() {
 
   //update the array 
   async function updatePost(post) {
-    console.log("postMalone", post);
-    
+    // console.log("postMalone", post);
     const updateItem = await itemsAPI.updatedPost(post);
-    console.log("updateItem", updateItem);
     const updatedPosts = posts.map((p) => p._id === updateItem._id ? updateItem : p);
+    console.log("updateItem", updateItem);
     console.log("update", updatedPosts);
     setPosts(updatedPosts);
     navigate('/');
