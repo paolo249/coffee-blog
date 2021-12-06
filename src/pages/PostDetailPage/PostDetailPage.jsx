@@ -1,8 +1,9 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from "react-router-dom";
+
+
 // How to connect route with PostCard?
-export default function PostDetailPage({uniquePost, deletePost,  setPosts}) {
+export default function PostDetailPage({uniquePost, deletePost, setPosts}) {
   const {id} = useParams();
   console.log("id: ", id);
   const navigate = useNavigate();
@@ -12,12 +13,16 @@ export default function PostDetailPage({uniquePost, deletePost,  setPosts}) {
 
   function handleDelete(id) {
     deletePost(id);
-
-    setPosts(uniquePost.filter(post => id!==post._id));
+    // setPosts(uniquePost.filter(post => id!==post._id));
     navigate('/');
     // console.log("id: ", id);
 }
 
+function handleUpdate(id) {
+  // setPosts(uniquePost.filter(post => id!==post._id));
+  navigate('/edit');
+  
+}
   
   
 
@@ -32,7 +37,8 @@ export default function PostDetailPage({uniquePost, deletePost,  setPosts}) {
           <h3>{post && post.desc}</h3>
           <br/>
         <button type = "submit" onClick={() => handleDelete(post._id)}> Delete </button>
-        <button type = "submit" onClick={() => navigate(`/new/:${id}`)}> Update </button>
+        {/* <Link to = "/new/:id" post = {post}> Update </Link> */}
+        <button type = "submit" onClick={() => handleUpdate(post._id)}> Update </button>
       
         </div>
     );

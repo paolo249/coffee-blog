@@ -6,8 +6,7 @@ router.get('/', itemsCtrl.getAll);
 router.post('/items', itemsCtrl.create);
 router.delete('/:id', itemsCtrl.deletePost);
 router.put('/:id', itemsCtrl.updatePost);
-// GET /api/items
-// GET /api/items/:id
+
 // router.get('/:id', itemsCtrl.show);
 
 

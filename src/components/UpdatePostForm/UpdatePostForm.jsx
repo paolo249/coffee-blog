@@ -2,18 +2,25 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from "react";
 
-export default function UpdatePostForm({uniquePost, setPosts, updatePost}) {
-    const[formData, setFormData] = useState({ name: "", desc: "" });
 
+// We have to send the (post) state through here in UpdatePostForm
+
+
+export default function UpdatePostForm({posts, setPosts, updatePost, post}) {
+    const[formData, setFormData] = useState({ name: "", desc: "" });
+   console.log("postm",posts);
+    //  console.log(setFormData);
     function handleChange(evt){
-        const newFormData = {...formData, [evt.target.name]: evt.target.value};
+        const newFormData = {[evt.target.name]: evt.target.value};
         setFormData(newFormData);
         console.log(newFormData);
     }
 
     function handleSubmit(evt) {
         evt.preventDefault();
+        //  setPosts(...posts, {[evt.target.name]: evt.target.value});
        updatePost(formData);
+       console.log(formData);
         setFormData({ name: "", desc: ""});
     }
     

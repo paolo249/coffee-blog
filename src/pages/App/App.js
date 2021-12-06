@@ -33,25 +33,25 @@ export default function App() {
       setPosts(items);
     }
     getAllPosts();
-  },[posts]);
+  },[]);
 
-  async function deletePost(post) {
-    const deleteItem = await itemsAPI.deletePost(post);
+
+  async function deletePost(id) {
+    console.log("deletePost",id);
+    const deleteItem = await itemsAPI.deletePost(id);
     const updatedPosts = posts.filter(post => post._id !== deleteItem._id)
     setPosts(updatedPosts);
   }
+
   
   
-  //   useEffect( function(){ 
-  // deletePost();
-// }, [posts]);
- 
-   
+
   //update the array 
   async function updatePost(post) {
+    console.log(post._id);
     const updateItem = await itemsAPI.updatedPost(post);
     console.log("Hello",updateItem);
-    const updatedPosts = posts.map((p,i) => p._id === updateItem._id ? updateItem : p);
+    const updatedPosts = posts.map((p) => p._id === updateItem._id ? updateItem : p);
     console.log("update", updateItem);
     setPosts(updatedPosts);
   }
@@ -83,7 +83,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/new" element={<NewBlogPost addPost={addPost}/>} />
-            <Route path="/new/:id" element={<UpdatePostForm updatePost={updatePost} uniquePost={uniquePost} setPosts={setPosts} />} />
+            <Route path="/edit/" element={<UpdatePostForm updatePost={updatePost} posts={posts} setPosts={setPosts} />} />
             {/* Redirected to PostPage just in case visitor enters an ambiguous route path */}
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>

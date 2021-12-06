@@ -1,11 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import {useState, useEffect} from "react";
-import PostForm from "../../components/PostForm/PostForm";
-import "./PostPage.css";
 
-
-import NewBlogPost from "../../pages/NewBlogPost/NewBlogPost";
 import PostCard from "../../components/PostCard/PostCard";
 
 

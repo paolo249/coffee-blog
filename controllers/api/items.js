@@ -15,16 +15,14 @@ async function create(req,res) {
 }
 
 async function deletePost(req,res) {
-   await Item.findByIdAndDelete(req.params.id);
-  //  await Item.deleteOne(req.body._id);
-  // res.json(item);
-  // console.log(Item.find({}));
-  res.json({message: "Post successfully deleted"});
+   const deletedItem = await Item.findByIdAndDelete(req.params.id);
+  res.json(deletedItem);
 }
 
 
 async function updatePost(req,res) {
-  const updatedItem = await Item.findByIdAndUpdate(req.body, req.body.id);
+  const updatedItem = await Item.findByIdAndUpdate(req.body.id, req.body, {new:true});
+  console.log(updatedItem);
   res.json(updatedItem);
 }
 

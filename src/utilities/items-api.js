@@ -11,6 +11,7 @@ export function deletePost(id) {
 
 
 export function updatedPost(post) {
+  console.log('postf',post);
   return sendRequest(`${BASE_URL}/${post._id}`, 'PUT');
 }
 
