@@ -1,0 +1,25 @@
+#description{
+  width: 1300px;
+  height: 500px;
+  border: 2px solid black;
+  padding: 40px;
+  margin: 50px;
+  padding-top:  0;
+  padding-left: 4px;
+  line-height: 1em; 
+  
+}
+
+#postName {
+    margin-left: 45px;
+    width: 1300px;
+    border: 1px solid black;
+    height: 50px;
+    padding: 30px;
+}
+
+form {
+    padding-top: 0;
+    padding-left: 0;
+    line-height: 1em; 
+ }

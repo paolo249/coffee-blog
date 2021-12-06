@@ -1,0 +1,21 @@
+#title-nav {
+        font-family: 'Gurajada', cursive;
+        font-size: 20pt;
+        background-color: black; 
+        color: white;
+        word-spacing: 20px;
+    
+}
+a {
+    color: white;
+    text-decoration-line: none;
+}
+
+#welcome {
+margin-left:60px;
+}
+
+#one {
+    word-spacing: 8px;
+}
+

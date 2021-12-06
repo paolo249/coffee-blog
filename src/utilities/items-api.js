@@ -10,6 +10,10 @@ export function deletePost(id) {
 }
 
 
+export function updatedPost(post) {
+  return sendRequest(`${BASE_URL}/${post._id}`, 'PUT');
+}
+
 export function getAll() {
   return sendRequest(BASE_URL);
 }
@@ -32,7 +36,7 @@ async function sendRequest(url, method = 'GET', payload = null) {
     options.headers.Authorization = `Bearer ${token}`;
   }
   const res = await fetch(url, options);
-  console.log("res",res);
+  // console.log("res",res);
   // res.ok will be false if the status code set to 4xx in the controller action
   if (res.ok) return res.json();
   throw new Error('Bad Request');

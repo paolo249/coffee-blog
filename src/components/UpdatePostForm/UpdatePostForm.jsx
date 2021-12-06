@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {useState, useEffect} from "react";
-import "./PostForm.css"
 
-export default function PostForm({addPost}) {
+export default function UpdatePostForm({uniquePost, setPosts, updatePost}) {
     const[formData, setFormData] = useState({ name: "", desc: "" });
 
     function handleChange(evt){
@@ -14,10 +13,11 @@ export default function PostForm({addPost}) {
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        addPost(formData);
+       updatePost(formData);
         setFormData({ name: "", desc: ""});
     }
     
+  
    
 
 
@@ -25,24 +25,22 @@ export default function PostForm({addPost}) {
         <form onSubmit={handleSubmit}>
           <label> Post Name </label>
           <input 
-            id = "postName"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            maxLength="800"
           />
 
           <label> Description </label>
-          <textarea 
-            id = "description"
+          <input 
             name="desc"
             value={formData.desc}
             onChange={handleChange}
-            maxLength="8000"
           />
 
 
-          <button type="submit"> ADD POST</button>
+          <button
+           type="submit"
+           > UPDATE POST</button>
         </form>
     );
 }

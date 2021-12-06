@@ -3,6 +3,7 @@ const Item = require('../../models/item');
 module.exports = {
   create,
   deletePost,
+  updatePost,
   getAll,
   show
 };
@@ -20,6 +21,15 @@ async function deletePost(req,res) {
   // console.log(Item.find({}));
   res.json({message: "Post successfully deleted"});
 }
+
+
+async function updatePost(req,res) {
+  const updatedItem = await Item.findByIdAndUpdate(req.body, req.body.id);
+  res.json(updatedItem);
+}
+
+
+
 
 
 async function getAll(req, res) {

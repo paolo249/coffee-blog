@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 export default function PostCard({post}) {
   const {id} = useParams();
-  console.log(id);
-  console.log(post);
+  // console.log(id);
+  // console.log(post);
       return(
         <Link to= {`/items/${post._id}`}>
          {post.name}
