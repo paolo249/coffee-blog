@@ -34,7 +34,7 @@ Welcome to Coffee Blog
 
 ☐ Getting Started: 
 # Link to my Deployed app
-[My Deployed App](hhttps://coffee-express-blog.herokuapp.com/)
+[My Deployed App](https://coffee-express-blog.herokuapp.com/)
 # Link to my Trello planning
 [Trello](https://trello.com/b/NYQg7M1T/coffee-blog-post)
 
