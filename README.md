@@ -1,15 +1,13 @@
 # Coffee-Blog
 # Version 1.0
 # Author: Paolo Ang <https://www.linkedin.com/in/paoloang/>
-# Final Revision Date: 10/21/2021
+# Final Revision Date: 12/7/2021
 
 Note to Audience: This app is still a work in progress 
 
 ☐ Introduction: 
+Welcome to Coffee Blog
 
-
-mongoose movies 
-reviews
 
 
 ☐ Screenshot(s): 
@@ -24,10 +22,10 @@ reviews
 
 
 ☐ Technologies Used: 
-- Mongoose, mongoDB
-- Node.js, 
+- MongoDB,
 - Express,
-- nodemon,
+- React
+- Node, 
 - JavaScript,
 - HTML, 
 - CSS, 
@@ -36,9 +34,9 @@ reviews
 
 ☐ Getting Started: 
 # Link to my Deployed app
-<!-- [My Deployed App](https://workout-program.herokuapp.com/) -->
+[My Deployed App](hhttps://coffee-express-blog.herokuapp.com/)
 # Link to my Trello planning
-<!-- [Trello](https://trello.com/b/3h7Q0v1p/workout-programs) -->
+[Trello](https://trello.com/b/NYQg7M1T/coffee-blog-post)
 
 use CRUD mapping guidelines link:
 https://gist.github.com/jim-clark/17908763db7bd3c403e6
@@ -57,14 +55,16 @@ $ git push heroku main
 $ git push heroku
 
 ☐ FUTURE UPDATES:
-- change form to have reps and sets. remove name workout
+- AAU, i want to be able to favorite posts prioritizing them on the top of the other posts
+- AAU, I want to be able to add an image within the blog post
+- AAU, I want to be able to COMMENT on other user blog posts
 
 
 ☐ ICEBOX ITEMS:
-Next Step(10/20/21): 
+Next Step(12/9/21): 
 - add responsive nav bar
-- change nav bar designs
-
+- better web design
+- refactor certain components
 
 
 
