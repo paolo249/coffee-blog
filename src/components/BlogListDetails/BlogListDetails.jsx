@@ -32,22 +32,6 @@ export default function BlogList() {
 }
 
 
-// import {useState, useEffect} from "react";
-// import { useParams } from "react-router-dom";
-// import {items} from "./seed";
-
-
-// export default function BlogList() {
-//     const [post, setPost] = useState([]);
-      
-    
-//     return(
-//       <div>
-        
-//       </div>
-//     );
-// }
-
 
 
  

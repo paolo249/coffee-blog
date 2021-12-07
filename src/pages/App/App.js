@@ -19,10 +19,12 @@ export default function App() {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate(); 
   const uniquePost = posts.map((p, i) => p )
-  
+  console.log("difpost", posts);
 
   async function addPost(post) {
+    console.log("premalone",post);
     const newItem = await itemsAPI.create(post);
+    console.log("newItem", newItem);
     setPosts([...posts, newItem]);
   }
   
@@ -36,16 +38,15 @@ export default function App() {
   },[]);
 
   async function deletePost(id) {
-    console.log("deletePost",id);
+    // console.log("deletePost",id);
     const deleteItem = await itemsAPI.deletePost(id);
     const updatedPosts = posts.filter(post => post._id !== deleteItem._id);
     setPosts(updatedPosts);
-    navigate('/');
   }  
 
   //update the array 
   async function updatePost(post) {
-    // console.log("postMalone", post);
+    console.log("postMalone", post);
     const updateItem = await itemsAPI.updatedPost(post);
     const updatedPosts = posts.map((p) => p._id === updateItem._id ? updateItem : p);
     console.log("updateItem", updateItem);
@@ -62,12 +63,12 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             {/* client-side route that renders the component instance if the path matches the url in the address bar */}
-            <Route path="/" element={<PostPage user={user} setUser={setUser} posts={posts}/>}/>
-            <Route path="/items/:id" element={<PostDetailPage uniquePost={uniquePost} deletePost={deletePost} updatePost={updatePost}  setPosts={setPosts}/>}/>
+            <Route path="/" element={<PostPage user={user} posts={posts}/>}/>
+            <Route path="/items/:id" element={<PostDetailPage uniquePost={uniquePost} deletePost={deletePost} updatePost={updatePost}  user={user}/>}/>
             <Route path="/posts/:postId" element={<BlogListDetails  />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/new" element={<NewBlogPost addPost={addPost}/>} />
+            <Route path="/new" element={<NewBlogPost addPost={addPost} user={user}/>} />
             {/* <Route path="/edit/" element={<UpdatePostForm updatePost={updatePost} posts={posts} setPosts={setPosts} />} /> */}
             {/* Redirected to PostPage just in case visitor enters an ambiguous route path */}
             <Route path="/*" element={<Navigate to="/" />} />

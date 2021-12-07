@@ -9,19 +9,19 @@ module.exports = {
 };
 
 async function create(req,res) {
-  const item = await Item(req.body);
+  const item = await Item(req.body).populate("user");
   item.save();
   res.json(item);
 }
 
 async function deletePost(req,res) {
-   const deletedItem = await Item.findByIdAndDelete(req.params.id);
+   const deletedItem = await Item.findByIdAndDelete(req.params.id).populate("user");
   res.json(deletedItem);
 }
 
 
 async function updatePost(req,res) {
-  const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {new:true});
+  const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {new:true}).populate("user");
   // console.log("updatedItembyController", updatedItem);
   res.json(updatedItem);
 }
@@ -31,14 +31,18 @@ async function updatePost(req,res) {
 
 
 async function getAll(req, res) {
-  const items = await Item.find({});
+  const items = await Item.find({}).populate("user").exec();
+
+
   // re-sort based upon the sortOrder of the categories
+  //sort to latest post
+  //items.find({}).sort().exec()
   console.log(items);
   res.json(items);
 
 }
 
 async function show(req, res) {
-  const item = await Item.findById(req.params.id);
+  const item = await Item.findById(req.params.id).populate("user");
   res.json(item);
 }

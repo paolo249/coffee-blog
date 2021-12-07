@@ -6,18 +6,12 @@ import {useState, useEffect} from "react";
 
 //you want to Post Page
 
-export default function NewBlogPost({addPost}) {
-  // const [post, setPost] = useState({
-  //   name: "",
-  //   desc: ""
-  // });
-
-  
-
+export default function NewBlogPost({addPost, user}) {
+ 
   return (
     <>
       <h1>New Blog Post</h1>
-      <PostForm addPost = {addPost}/>
+      <PostForm addPost = {addPost} user={user}/>
     </>
   );
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+
 import {useState, useEffect} from "react";
+import {useNavigate, Link } from "react-router-dom";
 import "./PostForm.css"
 
-export default function PostForm({addPost}) {
-    const[formData, setFormData] = useState({ name: "", desc: "" });
-
+export default function PostForm({addPost, user}) {
+    const[formData, setFormData] = useState({ name: "", desc: "" , user: user});
+    const navigate = useNavigate();
     function handleChange(evt){
         const newFormData = {...formData, [evt.target.name]: evt.target.value};
         setFormData(newFormData);
@@ -15,7 +16,8 @@ export default function PostForm({addPost}) {
     function handleSubmit(evt) {
         evt.preventDefault();
         addPost(formData);
-        setFormData({ name: "", desc: ""});
+        setFormData({ name: "", desc: "", user: user});
+        navigate('/');
     }
     
    

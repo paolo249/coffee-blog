@@ -12,9 +12,11 @@ import "./PostPage.css";
 // take whatever post you have and add it to the array of posts
 // 
 
-export default function PostPage({posts}) {
-const uniquePost = posts.map((p, i) =>   <PostCard post={p} key={i}/> ) 
-
+export default function PostPage({posts, user, setUser}) {
+  const sortedPosts = posts.sort((a,b) => new Date(b.updatedAt)- new Date(a.updatedAt));
+  const uniquePost = sortedPosts.map((p, i) =>   <PostCard post={p} key={i}/>);
+  console.log() 
+console.log(posts);
   return (
     <div className="PostPage">
       <h1>Blog Posts</h1>
