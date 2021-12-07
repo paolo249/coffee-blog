@@ -1,6 +1,6 @@
 # Coffee-Blog
 # Version 1.0
-# Author: Paolo Ang <https://www.linkedin.com/in/paoloang/>
+# Author: Paolo Ang 
 # Final Revision Date: 12/7/2021
 
 Note to Audience: This app is still a work in progress 
@@ -38,8 +38,7 @@ Welcome to Coffee Blog
 # Link to my Trello planning
 [Trello](https://trello.com/b/NYQg7M1T/coffee-blog-post)
 
-use CRUD mapping guidelines link:
-https://gist.github.com/jim-clark/17908763db7bd3c403e6
+
 
 ☐ Next Steps:
 

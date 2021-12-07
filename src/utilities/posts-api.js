@@ -1,8 +1,8 @@
 import {getToken} from './users-service';
-const BASE_URL = '/api/items';
+const BASE_URL = '/api/posts';
 
 export function create(item) {
-  return sendRequest(`${BASE_URL}/items`, 'POST', item);
+  return sendRequest(`${BASE_URL}`, 'POST', item);
 }
 
 export function deletePost(id) {
@@ -12,16 +12,13 @@ export function deletePost(id) {
 
 export function updatedPost(post) {
   // console.log('postf',post);
-  return sendRequest(`${BASE_URL}/items/${post._id}`, 'PUT', post);
+  return sendRequest(`${BASE_URL}/${post._id}`, 'PUT', post);
 }
 
 export function getAll() {
   return sendRequest(BASE_URL);
 }
 
-// export function getById(id) {
-//   return sendRequest(`${BASE_URL}/${id}`);
-// }
 
 async function sendRequest(url, method = 'GET', payload = null) {
   // Fetch accepts an options object as the 2nd argument

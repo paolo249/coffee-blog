@@ -4,14 +4,14 @@ import './App.css';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import PostPage from '../PostPage/PostPage';
-import BlogListDetails from '../../components/BlogListDetails/BlogListDetails';
+
 import NewBlogPost from '../NewBlogPost/NewBlogPost';
 import About from '../About/About';
 import PostDetailPage from '../../pages/PostDetailPage/PostDetailPage';
-import UpdatePostForm from '../../components/UpdatePostForm/UpdatePostForm';
+
 import Contact from '../Contact/Contact';
 import NavBar from '../../components/NavBar/NavBar';
-import * as itemsAPI from '../../utilities/items-api';
+import * as postsAPI from '../../utilities/posts-api';
 
 
 export default function App() {
@@ -22,34 +22,33 @@ export default function App() {
   console.log("difpost", posts);
 
   async function addPost(post) {
-    console.log("premalone",post);
-    const newItem = await itemsAPI.create(post);
-    console.log("newItem", newItem);
-    setPosts([...posts, newItem]);
+    // console.log("premalone",post);
+    const newPost = await postsAPI.create(post);
+    console.log("newPost", newPost);
+    setPosts([...posts, newPost]);
   }
   
   
   useEffect( function() {
     async function getAllPosts() {
-      const items = await itemsAPI.getAll();
-      setPosts(items);
+      const posts = await postsAPI.getAll();
+      setPosts(posts);
     }
     getAllPosts();
   },[]);
 
   async function deletePost(id) {
-    // console.log("deletePost",id);
-    const deleteItem = await itemsAPI.deletePost(id);
-    const updatedPosts = posts.filter(post => post._id !== deleteItem._id);
+    const deletePost = await postsAPI.deletePost(id);
+    const updatedPosts = posts.filter(post => post._id !== deletePost._id);
     setPosts(updatedPosts);
   }  
 
-  //update the array 
+
   async function updatePost(post) {
     console.log("postMalone", post);
-    const updateItem = await itemsAPI.updatedPost(post);
-    const updatedPosts = posts.map((p) => p._id === updateItem._id ? updateItem : p);
-    console.log("updateItem", updateItem);
+    const updatePost = await postsAPI.updatedPost(post);
+    const updatedPosts = posts.map((p) => p._id === updatePost._id ? updatePost : p);
+    console.log("updatePost", updatePost);
     console.log("update", updatedPosts);
     setPosts(updatedPosts);
     navigate('/');
@@ -64,8 +63,8 @@ export default function App() {
           <Routes>
             {/* client-side route that renders the component instance if the path matches the url in the address bar */}
             <Route path="/" element={<PostPage user={user} posts={posts}/>}/>
-            <Route path="/items/:id" element={<PostDetailPage uniquePost={uniquePost} deletePost={deletePost} updatePost={updatePost}  user={user}/>}/>
-            <Route path="/posts/:postId" element={<BlogListDetails  />} />
+            <Route path="/posts/:id" element={<PostDetailPage uniquePost={uniquePost} deletePost={deletePost} updatePost={updatePost}  user={user}/>}/>
+            {/* <Route path="/posts/:postId" element={<BlogListDetails  />} /> */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/new" element={<NewBlogPost addPost={addPost} user={user}/>} />
