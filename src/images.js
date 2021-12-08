@@ -1,8 +1,5 @@
 
-
-export default function images() {
-
-const images = [
+export const images = [
     {
     image_path:
         "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
@@ -95,6 +92,3 @@ const images = [
     }
   ];
 
-  return images;
-  
-}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import UpdatePostForm from '../../components/UpdatePostForm/UpdatePostForm';
-
+import "./PostDetailPage.css";
 
 export default function PostDetailPage({uniquePost, deletePost, updatePost, user}) {
   const {id} = useParams();
@@ -30,7 +30,7 @@ return(
             {!showForm && <div>
             <h1>  {post && post.name}</h1>
             <br/>
-            <h4>{post && post.desc}</h4>
+           <h4 className="description-name"> {post && post.desc} </h4>
             <h3> Created By {post.user.name}  </h3> 
             </div>}
           <br/>

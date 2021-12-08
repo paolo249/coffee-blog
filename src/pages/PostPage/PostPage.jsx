@@ -5,9 +5,8 @@ import "./PostPage.css";
 
 
 export default function PostPage({posts}) {
-
-  const postList = posts.map((p, g) => <PostCard post={p} key={p._id}/>);
-
+  const postList = posts.map((p, i) => <PostCard post={p} key={p._id} idx ={i}/>);
+  
   return (
     <div className="PostPage" >
       <h1> Blog Posts </h1>
