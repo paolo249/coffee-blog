@@ -3,11 +3,16 @@ import PostCard from "../../components/PostCard/PostCard";
 import "./PostPage.css";
 
 
+
 export default function PostPage({posts}) {
-  const postList = posts.map((p) => <PostCard post={p} key={p._id}/>);
+
+  const postList = posts.map((p, g) => <PostCard post={p} key={p._id}/>);
+
   return (
-    <div className="PostPage">
-      <section id = "postpage">
+    <div className="PostPage" >
+      <h1> Blog Posts </h1>
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet"></link>
+      <section id = "postpage" >
         {postList}
       </section>
     </div>

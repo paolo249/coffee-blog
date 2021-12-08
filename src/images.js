@@ -1,13 +1,8 @@
-import React from 'react';
-// import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import './PostCard.css';
-// import {image} from "../../images";
 
 
-export default function PostCard({post}) {
+export default function images() {
 
-  const images = [
+const images = [
     {
     image_path:
         "https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg",
@@ -99,31 +94,7 @@ export default function PostCard({post}) {
 
     }
   ];
-  const date = Date(post.createdAt).toString().substr(3,13);
-  const time = Date(post.createdAt).toString().substr(15,14);
 
-
-  return(
-    <Link to= {`/posts/${post._id}`} id="card" >
-      
-        <div
-         className = "postcard"
-        //  style={{
-        //   background: `url(${images[0]})  no-repeat center`,
-        //   WebkitBackgroundSize: "cover"
-        // }}
-         >
-        <img src= 'https://i.imgur.com/fEy0Qzg.jpg' width="595" height="400"/> 
-
-          <br/>
-          {post.name}
-          <br/>
-          {date}
-          <br/>
-          {time}
-        </div>
-        </Link>
-    );
-
-
+  return images;
+  
 }

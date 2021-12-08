@@ -31,7 +31,7 @@ return(
             <h1>  {post && post.name}</h1>
             <br/>
             <h4>{post && post.desc}</h4>
-            <h3> By {post.user.name}  </h3> 
+            <h3> Created By {post.user.name}  </h3> 
             </div>}
           <br/>
           {showForm && <UpdatePostForm post= {post} updatePost={updatePost} user = {user}/>}

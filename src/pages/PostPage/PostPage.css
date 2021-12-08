@@ -1,11 +1,19 @@
-
-
-.PostPage section  {
+#postpage {
   display: grid;
-  margin-top: 50px ;
-  justify-content: center;
-  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr 1fr;
+  gap: 30px 20px;
+  
 }
+
+
+.PostPage > #postpage {
+  font-family: "Josefin Slab", Arial, serif;
+  width: 100%;
+  height: 70px;
+  margin-top: 50px ;
+}
+
 
 .PostPage section a{
   text-decoration: none;
@@ -13,9 +21,7 @@
   margin: 5px;
   background-color: black;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
+ 
 }
 
-#img {
-  background-image: url(https://i.imgur.com/kC9oT4A.png);
-}

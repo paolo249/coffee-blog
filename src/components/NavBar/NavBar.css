@@ -1,5 +1,7 @@
 #title-nav {
         font-family: 'Gurajada', cursive;
+        /* font-family: "Josefin Slab", Arial, serif; */
+        /* font-family: "Sacramento", cursive !important; */
         font-size: 20pt;
         background-color: black; 
         color: white;
@@ -18,4 +20,6 @@ margin-left:60px;
 #one {
     word-spacing: 8px;
 }
+
+
 

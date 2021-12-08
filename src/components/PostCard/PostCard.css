@@ -1,4 +1,6 @@
-#postcard {
+.postcard {
     display: grid;
+    font-size: 23px;
+    width: 100%;
 
 }
