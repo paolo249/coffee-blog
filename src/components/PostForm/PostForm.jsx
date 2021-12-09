@@ -25,7 +25,7 @@ export default function PostForm({addPost, user}) {
 
     return(
         <form onSubmit={handleSubmit}>
-          <label> Post Name </label>
+          <label className="blogpost"> Post Name </label>
           <input 
             id = "postName"
             name="name"
@@ -34,7 +34,7 @@ export default function PostForm({addPost, user}) {
             maxLength="800"
           />
 
-          <label> Description </label>
+          <label className="blogpost"> Description </label>
           <textarea 
             id = "description"
             name="desc"

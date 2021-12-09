@@ -21,7 +21,6 @@ export default function PostCard({post, idx}) {
           WebkitBackgroundSize: "cover"
         }}
          >
-        {/* <img src= 'https://i.imgur.com/fEy0Qzg.jpg' width="595" height="400"/>  */}
 
           <br/>
           {post.name}

@@ -4,6 +4,7 @@ import "./PostPage.css";
 
 
 
+
 export default function PostPage({posts}) {
   const postList = posts.map((p, i) => <PostCard post={p} key={p._id} idx ={i}/>);
   

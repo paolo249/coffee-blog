@@ -79,12 +79,15 @@ code {
   font-size: 2vmin;
 }
 
-/* .form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
+.form-container {
+  margin: 10vmin 55vmin 12vmin;
+  padding: 2vmin;
+  background-color: var(--text-dark);
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
-} */
+  width: 80vmin;
+  
+}
 
 p.error-message {
   color: var(--orange);
@@ -98,15 +101,24 @@ form {
   color: var(--text-light);
 }
 
-label {
+.login {
   font-size: 2vmin;
+  color:white;
+  display: flex;
+  align-items: center;
+}
+
+.blogpost {
+  font-size: 2vmin;
+  color:black;
   display: flex;
   align-items: center;
 }
 
 input {
-  padding: 1vmin;
-  font-size: 2vmin;
+  font-family: Verdana, Geneva, Tahoma, sans-serif ;
+  padding: 1.5vmin;
+  font-size: 2.0vmin;
   border: .1vmin solid var(--tan-3);
   border-radius: .5vmin;
   color: var(--text-dark);
@@ -145,10 +157,10 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: var(--orange);
 }
 
 button[type="submit"] {
   grid-column: span 2;
-  margin: 1vmin 0 0;
+  margin: 10vmin 0 0;
 }

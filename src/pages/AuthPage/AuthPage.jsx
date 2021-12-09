@@ -19,6 +19,8 @@ export default function AuthPage({ setUser }) {
         : 
         <LoginForm setUser={setUser} />
       }
+    
     </main>
+   
   );
 }
