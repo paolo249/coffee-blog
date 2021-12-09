@@ -1,5 +1,6 @@
 import React from 'react';
 import {useState} from "react";
+import "./UpdatePostForm.css";
 
 
 
@@ -20,10 +21,14 @@ const[formData, setFormData]=useState(post);
 
 
     return(
+       <div>
+         <h1 id= "updatePst"> Update Post </h1>
+         <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet"></link>
         <form onSubmit={handleSubmit}>
           <label> Post Name </label>
           <input 
             name="name"
+            id = "update-postName"
             value={formData.name}
             onChange={handleChange}
           />
@@ -31,14 +36,16 @@ const[formData, setFormData]=useState(post);
           <label> Description </label>
           <input 
             name="desc"
+            id = "update-description"
             value={formData.desc}
             onChange={handleChange}
           />
 
 
           <button
-           type="submit"
+           type="submit" id = "update-btn"
            > UPDATE POST</button>
         </form>
+        </div>
     );
 }

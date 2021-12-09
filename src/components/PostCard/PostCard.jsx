@@ -10,7 +10,7 @@ export default function PostCard({post, idx}) {
 
   const date = Date(post.createdAt).toString().substr(3,13);
   const time = Date(post.createdAt).toString().substr(15,14);
-   
+
 
   return(
     <Link to= {`/posts/${post._id}`} id="card" >
@@ -18,16 +18,20 @@ export default function PostCard({post, idx}) {
          className = "postcard"
          style={{
           background: `url(${images[idx].image_path})  no-repeat center`,
-          WebkitBackgroundSize: "cover"
+          WebkitBackgroundSize: "cover",
+        
         }}
          >
-
+        <section id ="nametag">
+          <br/>
+          <div id="postname"><strong>{post.user.name}</strong></div>
           <br/>
           {post.name}
           <br/>
           {date}
           <br/>
           {time}
+          </section>
         </div>
         </Link>
     );

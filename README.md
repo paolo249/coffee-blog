@@ -7,7 +7,7 @@ Note to Audience: This app is still a work in progress
 
 ☐ Introduction: 
 Welcome to Coffee Express!  Coffee Express is an easy going and user friendly application allowing users to document and curate their own stories on the beautiful world of specialty coffee.   Coffee Express is inspired by the wonders of our world bringing in the diversity among coffee beans and a variety of extracting methods.  
-As coffee connoisseurs we endulge and consume copious amounts of coffee, driven by our ideas and stories, we are brave explorers venturing into the unknown striving to become our best versions.  My application demonstrates MERN stack utilizing full CRUD with detail to simplistic designs and modern themes.
+As coffee connoisseurs we endulge and consume copious amounts of coffee, driven by our ideas and stories, we are brave explorers venturing into the unknown striving to become our best versions.  My application demonstrates full CRUD utilizing MERN stack with detail to simplistic designs and modern themes.
 
 ☐ Screenshot(s): 
 ## Home Page ##

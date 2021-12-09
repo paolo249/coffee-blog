@@ -44,7 +44,7 @@ export default function PostForm({addPost, user}) {
           />
 
 
-          <button type="submit"> ADD POST</button>
+          <button type="submit" id = "button-submit"> ADD POST</button>
         </form>
     );
 }

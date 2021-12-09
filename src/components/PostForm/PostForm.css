@@ -22,4 +22,12 @@ form {
     padding-top: 0;
     padding-left: 0;
     line-height: 1em; 
+    align-content: left;
+ }
+
+ #button-submit{
+    width: 200px;
+    margin-left: 850px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
  }

@@ -28,16 +28,19 @@ return(
   <div>
         
             {!showForm && <div>
-            <h1>  {post && post.name}</h1>
+            <h1 id ="posttitle">  {post && post.name}</h1>
+            <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet"></link>
             <br/>
-           <h4 className="description-name"> {post && post.desc} </h4>
-            <h3> Created By {post.user.name}  </h3> 
+           <div className="description-name"
+            style ={{backgroundColor: "beige"}}
+           > {post && post.desc} </div>
+            <h2> Created By: {post.user.name}  </h2> 
             </div>}
           <br/>
           {showForm && <UpdatePostForm post= {post} updatePost={updatePost} user = {user}/>}
        {!showForm && user._id === post.user._id && <div>
-        <button type = "submit" onClick={() => handleDelete(post._id)}> Delete </button>
-        <button type = "submit" onClick={() => handleUpdate(post._id)}> Update </button>
+        <button type = "submit" onClick={() => handleDelete(post._id)} id="detaildelete"> Delete </button>
+        <button type = "submit" onClick={() => handleUpdate(post._id)} id="detailupdate"> Update </button>
         </div>}
 
         </div>

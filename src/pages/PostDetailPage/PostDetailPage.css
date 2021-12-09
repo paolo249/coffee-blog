@@ -1,3 +1,16 @@
-.description-name {
-    text-align: center;
+div > .description-name {
+    font-family: 'josefin', serif;
+    font-size: 25px;
+    word-break:break-word;
+    border:black;
+}
+
+#posttitle{
+    font-family: Georgia, 'Josefin', Times, serif;
+}
+
+
+#detaildelete, #detailupdate {
+        width: 170px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
 }
