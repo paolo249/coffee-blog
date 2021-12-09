@@ -11,12 +11,11 @@ As coffee connoisseurs we endulge and consume copious amounts of coffee, driven 
 
 ☐ Screenshot(s): 
 ## Home Page ##
-<!-- ![workout-program](https://i.imgur.com/N9wBT3P.png) -->
-## Page ##
-<!-- ![workout-program](https://i.imgur.com/Z3EBwfJ.png) -->
-## Page ##
-<!-- ![workout-program](https://i.imgur.com/eCWBIYO.png) -->
-
+![workout-program](https://i.imgur.com/gPCHdIT.png)
+## Login Page ##
+![coffee-blog](https://i.imgur.com/2ThFM5z.png)
+## Add Blog Post ##
+![coffee-blog](https://i.imgur.com/UX229a6.png)
 
 
 
@@ -65,13 +64,3 @@ Next Step(12/9/21):
 - refactor certain components
 
 
-
-
-
-
-
-
-
-
-#
-Clone this repo to provide the starter code for a comprehensive project including token-based authentication.

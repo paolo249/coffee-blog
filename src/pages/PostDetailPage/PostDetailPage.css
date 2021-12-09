@@ -6,7 +6,9 @@ div > .description-name {
 }
 
 #posttitle{
-    font-family: Georgia, 'Josefin', Times, serif;
+    font-family: 'Dancing Script', cursive;
+    font-size: 55px;
+    text-align: center;
 }
 
 
