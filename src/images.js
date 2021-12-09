@@ -6,8 +6,8 @@ export const images = [
 
     },
     {
-    image_path:
-        "https://i.imgur.com/eMEXceC.jpg",
+        image_path:
+        "https://i.imgur.com/WXJhsUG.jpg",
         
     },
     {
@@ -16,13 +16,13 @@ export const images = [
         
     },
     {
-        image_path:
-        "https://i.imgur.com/rM8inzI.jpg",
+    image_path:
+        "https://i.imgur.com/eMEXceC.jpg",
         
     },
     {
         image_path:
-        "https://i.imgur.com/WXJhsUG.jpg",
+        "https://i.imgur.com/rM8inzI.jpg",
         
     },
     {

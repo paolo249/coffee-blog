@@ -10,7 +10,7 @@ export default function PostPage({posts}) {
   
   return (
     <div className="PostPage" >
-      <h1> Blog Posts </h1>
+      <h1 id = "PostPageHeading"> #CoffeeLife </h1>
       <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700" rel="stylesheet"></link>
       <section id = "postpage" >
         {postList}

@@ -68,7 +68,7 @@ export default function App() {
             {/* <Route path="/posts/:postId" element={<BlogListDetails  />} /> */}
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/new" element={<NewBlogPost addPost={addPost} user={user}/>} />
+            <Route path="/new" element={<NewBlogPost addPost={addPost} user={user} setUser={setUser}/>} />
             {/* <Route path="/edit/" element={<UpdatePostForm updatePost={updatePost} posts={posts} setPosts={setPosts} />} /> */}
             {/* Redirected to PostPage just in case visitor enters an ambiguous route path */}
             <Route path="/*" element={<Navigate to="/" />} />
