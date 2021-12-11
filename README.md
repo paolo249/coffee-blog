@@ -24,6 +24,7 @@ As coffee connoisseurs we endulge and consume copious amounts of coffee, driven 
 - Express,
 - React
 - Node, 
+- Heroku,
 - JavaScript,
 - HTML, 
 - CSS, 
