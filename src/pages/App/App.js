@@ -4,12 +4,9 @@ import './App.css';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
 import PostPage from '../PostPage/PostPage';
-
-
 import NewBlogPost from '../NewBlogPost/NewBlogPost';
 import About from '../About/About';
 import PostDetailPage from '../../pages/PostDetailPage/PostDetailPage';
-
 import Contact from '../Contact/Contact';
 import NavBar from '../../components/NavBar/NavBar';
 import * as postsAPI from '../../utilities/posts-api';
@@ -19,16 +16,25 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate(); 
-  const uniquePost = posts.map((p, i) => p )
-  console.log("difpost", posts);
+  const uniquePost = posts.map((p) => p )
 
   async function addPost(post) {
-    // console.log("premalone",post);
     const newPost = await postsAPI.create(post);
-    console.log("newPost", newPost);
     setPosts([...posts, newPost]);
   }
   
+  async function deletePost(id) {
+    const deletePost = await postsAPI.deletePost(id);
+    const updatedPosts = posts.filter(post => post._id !== deletePost._id);
+    setPosts(updatedPosts);
+  }  
+
+  async function updatePost(post) {
+    const updatePost = await postsAPI.updatedPost(post);
+    const updatedPosts = posts.map((p) => p._id === updatePost._id ? updatePost : p);
+    setPosts(updatedPosts);
+    navigate('/');
+  }
   
   useEffect( function() {
     async function getAllPosts() {
@@ -37,24 +43,6 @@ export default function App() {
     }
     getAllPosts();
   },[]);
-
-  async function deletePost(id) {
-    const deletePost = await postsAPI.deletePost(id);
-    const updatedPosts = posts.filter(post => post._id !== deletePost._id);
-    setPosts(updatedPosts);
-  }  
-
-
-  async function updatePost(post) {
-    console.log("postMalone", post);
-    const updatePost = await postsAPI.updatedPost(post);
-    const updatedPosts = posts.map((p) => p._id === updatePost._id ? updatePost : p);
-    console.log("updatePost", updatePost);
-    console.log("update", updatedPosts);
-    setPosts(updatedPosts);
-    navigate('/');
-  }
-
 
   return (
     <main className="App">
